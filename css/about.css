@@ -1,0 +1,164 @@
+:root {
+    --bright: #FBFAF5;
+    --beige: #F9F8EC;
+    --red: #FF1B0D;
+    --gray: #F6F5F1;
+    --grayer: #363636;
+    --blue: #2C323D;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--gray);
+
+}
+
+header {
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+    padding: 5px;
+
+}
+
+.home,
+.projects {
+    color: var(--grayer);
+    font-weight: bold;
+    padding: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Fade in */
+a::after {
+    display: flex;
+    align-items: baseline;
+    content: '';
+    width: 100%;
+    height: 0.1em;
+    background-color: var(--grayer);
+    opacity: 0;
+    transition: opacity 500ms, transform 500ms;
+}
+
+a:hover::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+}
+
+a::after {
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+}
+
+a:hover::after {
+    transform: scale(1);
+}
+
+.profile-row {
+    display: flex;
+    flex-direction: row;
+
+    overflow: overlay;
+}
+
+.row-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: overlay;
+}
+
+/* .profile-picture{
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+} */
+.profile-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.name {
+    margin-bottom: 5px;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    /*     width: 30px;
+ */
+    height: 30px;
+    margin: 10px;
+
+}
+.junior{
+    margin-top: 3px;
+}
+
+.phone,
+.envelope,
+.github {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.space {
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+}
+
+.introduce {
+    text-align: center;
+    margin: 10px;
+}
+
+.introduce-content {
+    background-color: var(--blue);
+    min-height: 500px;
+    color: var(--bright);
+    padding: 50px;
+}
+/* info bubble * LATER 
+.tooltip {
+    position: relative;
+    display: inline-block;
+/*     border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip //
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    content: 'david.vasadi';
+    visibility: visible;
+}
+/* info bubble * LATER */
