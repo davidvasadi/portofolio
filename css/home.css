@@ -4,6 +4,7 @@
     --red: #FF1B0D;
     --gray: #A3A3A3;
     --grayer: #363636;
+    --blue: #2C323D;
 }
 
 * {
@@ -37,12 +38,12 @@ html{
   a::after {
     display: flex;
     align-items: baseline;
-    content: '';
+    content: ''; 
     width: 100%;
     height: 0.1em;
     background-color: var(--grayer);
     opacity: 0;
-    transition: opacity 500ms, transform 500ms;
+   transition: opacity 500ms, transform 500ms; 
 }
 
 a:hover::after {
@@ -175,9 +176,9 @@ main {
     text-transform: uppercase;
     font-size: 20px;
     font-weight: 700;
-    min-width: 350px;
+    min-width: 320px;
     width: 100%;
-    height: 550px;
+    height: 500px;
     margin: 0px 20px 0 ;
     border: none;
     border-radius: 30px;
@@ -194,8 +195,8 @@ main {
 .container::after {
     content: "";
     margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     width: 60%;
     height: 5px;
     border-radius: 20px;
@@ -210,6 +211,7 @@ main {
     border-radius: 10px;
     opacity: 70%;
     z-index: 2;
+    width: 60px;
 }
 
 
@@ -226,4 +228,155 @@ img:hover {
     width: 30px;
     height: 30px;
     margin: 10px 5px 0 0;
+}
+/*introduce container */
+
+
+.profile-row {
+    display: flex;
+    flex-direction: row;
+
+    overflow: overlay;
+}
+
+.row-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: overlay;
+}
+
+/* .profile-picture{
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+} */
+.profile-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.name {
+    margin-bottom: 5px;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    /*     width: 30px;
+ */
+    height: 30px;
+    margin: 10px;
+
+}
+.junior{
+    margin-top: 3px;
+}
+
+.phone,
+.envelope,
+.github {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.space {
+    box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30px;
+}
+
+.introduce {
+    text-align: center;
+    margin: 10px;
+}
+
+.introduce-content {
+    background-color: var(--blue);
+    min-height: 500px;
+    color: var(--bright);
+    padding: 50px;
+}
+/* info bubble * LATER 
+.tooltip {
+    position: relative;
+    display: inline-block;
+/*     border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip //
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    content: 'david.vasadi';
+    visibility: visible;
+}
+/* info bubble * LATER */
+
+/*media query*/
+@media only screen and (max-width: 1100px) {
+    .card {
+      min-width: 340px;
+      height: 500px;
+      font-size: medium;
+    }
+  }
+  
+  @media only screen and (max-width: 375px) {
+    .card {
+      margin: 10px;
+      min-width: 250px;
+      height: 500px;
+      font-size: medium;
+    }
+    .main{
+        display: flex;
+        flex-direction: row;
+
+    }
+    .arrow-left,.arrow-right{
+        display: none;
+    }
+  }
+  @media only screen and (min-width : 375px ) {
+    .row-row{
+        display: flex;
+        flex-direction: column;
+    }
+    
+  }
+  /*back to top button */
+  #myBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: red; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#myBtn:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
 }

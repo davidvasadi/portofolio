@@ -11,7 +11,7 @@ const animation = [
   };
 
 const teljes = document.querySelector('*');
-const click_btn=document.querySelector('.navigate-button');
+const click_btn =document.querySelector('.navigate-button');
 
 click_btn.addEventListener('click',()=>{
    teljes.animate(animation, animationTiming);

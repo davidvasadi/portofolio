@@ -1,0 +1,184 @@
+:root {
+    --bright: #FBFAF5;
+    --beige: #F9F8EC;
+    --red: #FF1B0D;
+    --gray: #A3A3A3;
+    --grayer: #363636;
+}
+
+body {font-family:  'Inter', sans-serif;
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+
+  }
+  header {
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+    padding: 5px;
+
+}
+
+.home,
+.about,
+.projects {
+    color: var(--grayer);
+    padding: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Fade in */
+a::after {
+    display: flex;
+    align-items: baseline;
+    content: '';
+    width: 100%;
+    height: 0.1em;
+    background-color: var(--grayer);
+    opacity: 0;
+    transition: opacity 500ms, transform 500ms;
+}
+
+a:hover::after {
+    opacity: 1;
+    transform: translate3d(0, 0.2em, 0);
+}
+
+a::after {
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+}
+
+a:hover::after {
+    transform: scale(1);
+}
+#days{
+    color: var(--grayer);
+}
+  button {
+    text-transform: uppercase;
+    font-size: x-small;
+    font-weight: bold;
+    width: 75px;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px gray;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  #header {
+    padding: 10px;
+    color: #d36c6c;
+    font-size: 26px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+  }
+  #header button {
+    background-color:var(--grayer);
+  }
+  #container {
+    width: 770px;
+  }
+  #weekdays {
+    width: 100%;
+    display: flex;
+    color: #247BA0;
+  }
+  #weekdays div {
+    width: 100px;
+    padding: 10px;
+  }
+  #calendar {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .day {
+    width: 100px;
+    padding: 10px;
+    height: 100px;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 5px;
+    box-shadow: 0px 0px 3px #CBD4C2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .day:hover {
+    background-color: var(--beige);
+  }
+  
+  .day + #currentDay {
+    background-color:var(--beige);
+  }
+  .event {
+    font-size: 10px;
+    padding: 3px;
+    background-color: var(--grayer);
+    color: white;
+    border-radius: 5px;
+    max-height: 55px;
+    overflow: hidden;
+  }
+  .padding {
+    cursor: default !important;
+    background-color: var(--bright) !important;
+    box-shadow: none !important;
+    opacity: 55%;
+  }
+  #newEventModal, #deleteEventModal {
+    display: none;
+    z-index: 20;
+    padding: 25px;
+    background-color: #FFFfFF;
+    box-shadow: 0px 0px 3px black;
+    border-radius: 5px;
+    width: 350px;
+    top: 100px;
+    left: calc(50% - 175px);
+    position: absolute;
+    font-family: sans-serif;
+  }
+  #eventTitleInput {
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 3px gray;
+  }
+  #eventTitleInput.error {
+    border: 2px solid red;
+  }
+  #cancelButton, #deleteButton {
+    background-color: #d36c6c;
+  }
+  #saveButton, #closeButton {
+    background-color: var(--grayer);
+  }
+  #eventText {
+    font-size: 14px;
+  }
+  #modalBackDrop {
+    display: none;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+  }
